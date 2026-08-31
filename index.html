@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>From Lily Fest</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <form id="formDaftar" novalidate>
+        <h1>FROM LILY FEST</h1>
+
+        <div id="hasil"></div>
+
+        <label for="nama">Nama siswa</label>
+        <input type="text" id="nama" name="nama siswa" placeholder="Masukkan nama lengkap">
+        <small id="errorNama" class="error"></small>
+        <br><br>
+
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" placeholder="Masukkan email anda">
+        <small id="errorEmail" class="error"></small>
+        <br><br>
+
+        <label for="kelas">Pilih Kelas</label>
+        <select name="kelas" id="kelas" required>
+            <option value="X-PPLG 1">X-PPLG 1</option>
+            <option value="X-PPLG 2">X-PPLG 2</option>
+            <option value="X-PPLG 3">X-PPLG 3</option>
+
+            <option value="X-TJKT 1">X-TJKT 1</option>
+            <option value="X-TJKT 2">X-TJKT 2</option>
+            <option value="X-TJKT 3">X-TJKT 3</option>
+            <option value="X-TJKT 4">X-TJKT 4</option>
+
+            <option value="X-PF">X-PF</option>
+
+            <option value="XI-RPL 1">XI-RPL 1</option>
+            <option value="XI-RPL 2">XI-RPL 2</option>
+            <option value="XI-RPL 3">XI-RPL 3</option>
+
+            <option value="XI-TKJ 1">XI-TKJ 1</option>
+            <option value="XI-TKJ 2">XI-TKJ 2</option>
+            <option value="XI-TKJ 3">XI-TKJ 3</option>
+
+            <option value="XI-TJA">XI-TJA</option>
+            <option value="XI-PF">XI-PF</option>
+
+            <option value="XII-RPL 1">XII-RPL 1</option>
+            <option value="XII-RPL 2">XII-RPL 2</option>
+            <option value="XII-RPL 3">XII-RPL 3</option>
+
+            <option value="XII-TKJ 1">XII-TKJ 1</option>
+            <option value="XII-TKJ 2">XII-TKJ 2</option>
+            <option value="XII-TKJ 3">XII-TKJ 3</option>
+
+            <option value="XII-TJA 1">XII-TJA 1</option>
+            <option value="XII-TJA 2">XII-TJA 2</option>
+            <option value="XII-PF 1">XII-PF 1</option>
+            <option value="XII-PF 2">XII-PF 2</option>
+        </select>
+        <small id="errorKelas" class="error"></small>
+        <br><br>
+
+        <label for="jurusan">Jurusan</label>
+        <select name="jurusan" id="jurusan" required>
+            <option value="RPL">RPL</option>
+            <option value="TKJ">TKJ</option>
+            <option value="TJA">TJA</option>
+            <option value="PF">PF</option>
+        </select>
+        <small id="errorJurusan" class="error"></small>
+        <br><br>
+
+        <label for="kegiatan">Kegiatan</label>
+        <textarea id="kegiatan" name="kegiatan" rows="5" cols="30"></textarea>
+        <small id="errorKegiatan" class="error"></small>
+        <br><br>
+
+        <div class="checkbox-group">
+            <input type="checkbox" id="setuju">
+            <label for="setuju">Saya menyetujui Syarat & Ketentuan</label>
+        </div>
+        <small id="errorSetuju" class="error"></small>
+        <br><br>
+
+        <button type="submit" id="btnDaftar" disabled>Daftar Sekarang</button>
+    </form>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
