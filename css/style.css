@@ -11,7 +11,7 @@ body {
 }
 
 
-/* FORM DAFTAR */
+
 
 #formDaftar {
     width: 100%;
@@ -32,7 +32,7 @@ body {
 }
 
 
-/* LABEL */
+
 
 label {
     display: block;
@@ -43,7 +43,7 @@ label {
 }
 
 
-/* INPUT, SELECT, TEXTAREA */
+
 
 input,
 select,
@@ -69,7 +69,7 @@ textarea:focus {
 }
 
 
-/* PESAN ERROR */
+
 
 .error {
     color: #b23a5d;
@@ -77,7 +77,7 @@ textarea:focus {
 }
 
 
-/* CHECKBOX */
+
 
 .checkbox-group {
     display: flex;
@@ -100,7 +100,7 @@ textarea:focus {
 }
 
 
-/* TOMBOL */
+
 
 button {
     font-family: Arial, sans-serif;
@@ -122,8 +122,15 @@ button {
     background-color: #b23a5d;
 }
 
+#btnDaftar:disabled {
+    background-color: #aaa;
+    color: white;
+    cursor: not-allowed;
+    opacity: 0.7;
+}
 
-/* HASIL */
+
+
 
 #hasil {
     background-color: #e9f3ec;
@@ -136,7 +143,7 @@ button {
 }
 
 
-/* DASHBOARD */
+
 
 .dashboard-wrap {
     width: 100%;
@@ -145,7 +152,7 @@ button {
 }
 
 
-/* HEADER DASHBOARD */
+
 
 .dashboard-header {
     text-align: center;
@@ -166,7 +173,7 @@ button {
 }
 
 
-/* KARTU TABEL */
+
 
 .table-card {
     background-color: white;
@@ -187,7 +194,7 @@ button {
 }
 
 
-/* PESAN KOSONG */
+
 
 #empty-msg {
     text-align: center;
@@ -197,7 +204,7 @@ button {
 }
 
 
-/* TABEL */
+
 
 table {
     width: 100%;
@@ -223,7 +230,7 @@ tbody tr:hover {
 }
 
 
-/* STATUS */
+
 
 .status {
     font-weight: bold;
@@ -231,7 +238,7 @@ tbody tr:hover {
 }
 
 
-/* TOMBOL EDIT DAN HAPUS */
+
 
 .icon-btn {
     padding: 7px 10px;
@@ -258,7 +265,7 @@ tbody tr:hover {
 }
 
 
-/* TAMPILAN HP */
+
 
 @media (max-width: 700px) {
 
