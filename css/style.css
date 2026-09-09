@@ -1,60 +1,84 @@
-/* ===== Warna dasar halaman ===== */
+* {
+    box-sizing: border-box;
+}
+
 body {
-    font-family: Arial, Helvetica, sans-serif;
-    background-color: #ffe6f0; /* pink muda */
-    display: flex;
-    justify-content: center;
-    padding: 40px 20px;
+    font-family: Arial, sans-serif;
+    background-color: #fdf5f8;
     margin: 0;
+    padding: 40px 20px;
+    color: #4a1942;
 }
 
-/* ===== Judul ===== */
-h1 {
-    text-align: center;
-    color: #ff5da2; /* pink */
-}
 
-/* ===== Kotak form ===== */
-form {
-    background-color: #ffffff; /* putih */
+/* FORM DAFTAR */
+
+#formDaftar {
     width: 100%;
     max-width: 480px;
+    margin: 0 auto;
+    background-color: white;
+    border: 1px solid #f0c4d8;
+    border-radius: 15px;
     padding: 30px;
-    border-radius: 10px;
-    border-top: 6px solid #ff9ecb; /* garis atas pink */
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 5px 15px rgba(74, 25, 66, 0.1);
 }
 
-/* ===== Label ===== */
+#formDaftar h1 {
+    text-align: center;
+    color: #d6447e;
+    font-size: 30px;
+    margin: 0 0 25px;
+}
+
+
+/* LABEL */
+
 label {
     display: block;
+    font-size: 14px;
     font-weight: bold;
     margin-bottom: 6px;
-    color: #4a4a6a; /* abu kebiruan */
+    color: #4a1942;
 }
 
-/* ===== Input, select, textarea ===== */
-input[type="text"],
-input[type="email"],
+
+/* INPUT, SELECT, TEXTAREA */
+
+input,
 select,
 textarea {
     width: 100%;
-    padding: 10px;
-    border: 2px solid #cfe0ff; /* biru muda */
-    border-radius: 6px;
+    padding: 10px 12px;
+    margin-bottom: 15px;
+    border: 1px solid #f0c4d8;
+    border-radius: 8px;
     font-size: 14px;
-    font-family: inherit;
-    background-color: #fbfdff;
+    font-family: Arial, sans-serif;
+}
+
+textarea {
+    resize: vertical;
 }
 
 input:focus,
 select:focus,
 textarea:focus {
     outline: none;
-    border-color: #ff9ecb; /* pink saat fokus */
+    border-color: #d6447e;
 }
 
-/* ===== Checkbox ===== */
+
+/* PESAN ERROR */
+
+.error {
+    color: #b23a5d;
+    font-size: 12px;
+}
+
+
+/* CHECKBOX */
+
 .checkbox-group {
     display: flex;
     align-items: center;
@@ -62,52 +86,203 @@ textarea:focus {
     margin-bottom: 20px;
 }
 
-.checkbox-group label {
-    margin-bottom: 0;
-    font-weight: normal;
-    color: #4a4a6a;
+.checkbox-group input[type="checkbox"] {
+    width: 16px;
+    height: 16px;
+    margin: 0;
 }
 
-/* ===== Tombol ===== */
+.checkbox-group label {
+    display: inline;
+    margin: 0;
+    font-size: 13px;
+    font-weight: normal;
+}
+
+
+/* TOMBOL */
+
 button {
-    width: 100%;
-    padding: 12px;
-    background-color: #ff5da2; /* pink */
-    color: white;
+    font-family: Arial, sans-serif;
     border: none;
-    border-radius: 6px;
-    font-size: 16px;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: bold;
     cursor: pointer;
 }
 
-button:hover:not(:disabled) {
-    background-color: #e6478c; /* pink lebih gelap */
+#formDaftar button[type="submit"] {
+    width: 100%;
+    padding: 12px;
+    background-color: #d6447e;
+    color: white;
 }
 
-button:disabled {
-    background-color: #f0c0d5; /* pink pucat */
-    cursor: not-allowed;
+#formDaftar button[type="submit"]:hover {
+    background-color: #b23a5d;
 }
 
-/* ===== Hasil pendaftaran ===== */
+
+/* HASIL */
+
 #hasil {
-    margin-bottom: 15px;
+    background-color: #e9f3ec;
+    color: #4c8b63;
     text-align: center;
+    font-size: 13px;
+    padding: 10px;
+    border-radius: 8px;
+    margin-bottom: 15px;
+}
+
+
+/* DASHBOARD */
+
+.dashboard-wrap {
+    width: 100%;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+
+/* HEADER DASHBOARD */
+
+.dashboard-header {
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.dashboard-header .judul-kecil {
+    font-size: 13px;
+    color: #b23a5d;
     font-weight: bold;
+    margin: 0 0 5px;
 }
 
-#hasil.success {
-    color: #2e9e5b; /* hijau, saat sukses */
+.dashboard-header h1 {
+    font-size: 30px;
+    color: #4a1942;
+    margin: 0;
 }
 
-/* ===== Pesan error validasi ===== */
-.error {
-    display: block;
-    color: #e63946; /* merah */
+
+/* KARTU TABEL */
+
+.table-card {
+    background-color: white;
+    border: 1px solid #f0c4d8;
+    border-radius: 15px;
+    padding: 20px;
+    box-shadow: 0 5px 15px rgba(74, 25, 66, 0.08);
+}
+
+.table-card-top {
+    margin-bottom: 15px;
+}
+
+.table-card-top h2 {
+    font-size: 18px;
+    margin: 0;
+    color: #4a1942;
+}
+
+
+/* PESAN KOSONG */
+
+#empty-msg {
+    text-align: center;
+    color: #7a4a6e;
+    font-size: 14px;
+    padding: 20px;
+}
+
+
+/* TABEL */
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 13px;
+}
+
+th {
+    text-align: left;
+    padding: 10px;
+    color: #7a4a6e;
     font-size: 12px;
-    margin-top: 4px;
+    border-bottom: 1px solid #f0c4d8;
 }
 
-.input-error {
-    border-color: #e63946 !important; /* border merah saat field tidak valid */
+td {
+    padding: 12px 10px;
+    border-bottom: 1px solid #f5e9ef;
+}
+
+tbody tr:hover {
+    background-color: #fdf6f9;
+}
+
+
+/* STATUS */
+
+.status {
+    font-weight: bold;
+    font-size: 12px;
+}
+
+
+/* TOMBOL EDIT DAN HAPUS */
+
+.icon-btn {
+    padding: 7px 10px;
+    margin-right: 5px;
+    border-radius: 6px;
+}
+
+.icon-btn.edit {
+    background-color: #fbefda;
+    color: #c9932e;
+}
+
+.icon-btn.edit:hover {
+    background-color: #f5e1b8;
+}
+
+.icon-btn.hapus {
+    background-color: #fbe4ea;
+    color: #b23a5d;
+}
+
+.icon-btn.hapus:hover {
+    background-color: #f6cbd8;
+}
+
+
+/* TAMPILAN HP */
+
+@media (max-width: 700px) {
+
+    body {
+        padding: 20px 10px;
+    }
+
+    #formDaftar {
+        padding: 20px;
+    }
+
+    .dashboard-wrap {
+        overflow-x: auto;
+    }
+
+    .table-card {
+        overflow-x: auto;
+    }
+
+    table {
+        min-width: 800px;
+    }
+
+    .dashboard-header h1 {
+        font-size: 25px;
+    }
 }

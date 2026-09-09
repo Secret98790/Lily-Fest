@@ -1,3 +1,5 @@
+let daftarPendaftar = JSON.parse(localStorage.getItem("daftarPendaftar")) || [];
+
 const form = document.getElementById('formDaftar');
 const nama = document.getElementById('nama');
 const email = document.getElementById('email');
@@ -64,6 +66,11 @@ form.addEventListener('submit', function (e) {
         'Kegiatan: ' + kegiatan.value;
     hasil.className = 'success';
 
+    localStorage.setItem("nama_siswa", nama.value)
+
+
     form.reset();
     btnDaftar.disabled = true;
 });
+
+console.log(localStorage.getItem("nama_siswa"))
