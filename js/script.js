@@ -6,6 +6,7 @@ const email = document.getElementById('email');
 const kelas = document.getElementById('kelas');
 const jurusan = document.getElementById('jurusan');
 const kegiatan = document.getElementById('kegiatan');
+const status = document.getElementById('status');
 const setuju = document.getElementById('setuju');
 const btnDaftar = document.getElementById('btnDaftar');
 const hasil = document.getElementById('hasil');
@@ -49,6 +50,33 @@ email.addEventListener('input', function () {
 });
 
 cekForm();
+
+let editId = localStorage.getItem('editId');
+
+if (editId !== null) {
+
+    editId = Number(editId);
+
+    for (let i = 0; i < daftarPendaftar.length; i++) {
+
+        if (daftarPendaftar[i].id === editId) {
+
+            nama.value = daftarPendaftar[i].nama;
+            email.value = daftarPendaftar[i].email;
+            kelas.value = daftarPendaftar[i].kelas;
+            jurusan.value = daftarPendaftar[i].jurusan;
+            kegiatan.value = daftarPendaftar[i].kegiatan;
+            status.value = daftarPendaftar[i].status;
+
+            setuju.checked = true;
+
+            btnDaftar.disabled = false;
+            btnDaftar.textContent = "Simpan Perubahan";
+
+            break;
+        }
+    }
+}
 
 form.addEventListener('submit', function (e) {
     e.preventDefault();
@@ -101,6 +129,32 @@ form.addEventListener('submit', function (e) {
         status: "pending"
     };
 
+    if (editId !== null) { 
+ 
+            for (let i = 0; i < daftarPendaftar.length; i++) { 
+ 
+                if (daftarPendaftar[i].id === editId) { 
+ 
+                    dataSiswa.id = editId; 
+                    dataSiswa.status = status.value; 
+ 
+                    daftarPendaftar[i] = dataSiswa; 
+ 
+                    break; 
+                } 
+            } 
+
+            localStorage.setItem(
+                "daftarPendaftar",
+                JSON.stringify(daftarPendaftar)
+            );
+
+        localStorage.removeItem('editId'); 
+ 
+            window.location.href = 'pages/dashboard.html'; 
+ 
+        } else { 
+
     let index = -1;
 
 for (let i = 0; i < daftarPendaftar.length; i++) {
@@ -118,10 +172,11 @@ if (index !== -1) {
     daftarPendaftar.push(dataSiswa);
 }
 
-    localStorage.setItem(
-        "daftarPendaftar",
-        JSON.stringify(daftarPendaftar)
-    );
+          localStorage.setItem( 
+                "daftarPendaftar", 
+                JSON.stringify(daftarPendaftar) 
+            ); 
+        } 
 
     hasil.innerHTML =
         'Pendaftaran berhasil!<br>' +
@@ -167,11 +222,30 @@ if (tbodyPeserta) {
                 '<td>' + data.kegiatan + '</td>' +
                 '<td>' + data.status + '</td>' +
                 '<td>' +
-                    '<button class="icon-btn edit">Edit</button>' +
-                    '<button class="icon-btn hapus">Hapus</button>' +
+                    '<button class="icon-btn edit" data-id="' + data.id + '">Edit</button>' +
+                    '<button class="icon-btn hapus" data-id="' + data.id + '">Hapus</button>' +
                 '</td>';
 
             tbodyPeserta.appendChild(baris);
+
+            let tombolEdit = baris.querySelector('.edit');
+
+            tombolEdit.addEventListener('click', function () {
+
+                let id = Number(this.getAttribute('data-id'));
+
+                for (let i = 0; i < daftarPendaftar.length; i++) {
+
+                    if (daftarPendaftar[i].id === id) {
+
+                        localStorage.setItem('editId', id);
+
+                        window.location.href = '../index.html';
+
+                        break;
+                    }
+                }
+            });
         }
     }
 }
