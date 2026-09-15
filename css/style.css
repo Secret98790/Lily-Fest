@@ -33,7 +33,6 @@ body {
 
 
 
-
 label {
     display: block;
     font-size: 14px;
@@ -41,7 +40,6 @@ label {
     margin-bottom: 6px;
     color: #4a1942;
 }
-
 
 
 
@@ -67,7 +65,6 @@ textarea:focus {
     outline: none;
     border-color: #d6447e;
 }
-
 
 
 
@@ -128,7 +125,6 @@ button {
     cursor: not-allowed;
     opacity: 0.7;
 }
-
 
 
 
@@ -195,8 +191,7 @@ button {
 
 
 
-
-#empty-msg {
+#pesanKosong {
     text-align: center;
     color: #7a4a6e;
     font-size: 14px;
@@ -267,6 +262,58 @@ tbody tr:hover {
 
 
 
+.form-edit {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 90%;
+    max-width: 480px;
+    max-height: 90vh;
+    overflow-y: auto;
+    background-color: white;
+    border: 1px solid #f0c4d8;
+    border-radius: 15px;
+    padding: 25px;
+    box-shadow: 0 5px 20px rgba(74, 25, 66, 0.2);
+    z-index: 10;
+}
+
+.form-edit h2 {
+    text-align: center;
+    color: #d6447e;
+    font-size: 22px;
+    margin: 0 0 20px;
+}
+
+.form-edit button {
+    width: 100%;
+    padding: 11px;
+    margin-top: 5px;
+}
+
+#btnSimpanEdit {
+    background-color: #d6447e;
+    color: white;
+}
+
+#btnSimpanEdit:hover {
+    background-color: #b23a5d;
+}
+
+#btnBatalEdit {
+    background-color: #eee;
+    color: #4a1942;
+}
+
+#btnBatalEdit:hover {
+    background-color: #ddd;
+}
+
+
+
+
 @media (max-width: 700px) {
 
     body {
@@ -291,5 +338,10 @@ tbody tr:hover {
 
     .dashboard-header h1 {
         font-size: 25px;
+    }
+
+    .form-edit {
+        width: 95%;
+        padding: 20px;
     }
 }
